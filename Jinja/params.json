@@ -1,0 +1,21 @@
+[
+    {
+        "hostname": "Ninja-RTR",
+        "domain_name": "genie.local",
+        "management_ip": "1.1.1.1",
+        "ospf": {
+            "process": 100,
+            "interfaces": [
+                {
+                    "name": "GigabitEthernet1",
+                    "area": 0
+                },
+                {
+                    "name": "GigabitEthernet2",
+                    "area": 1
+                }
+            ]
+
+        }
+    }
+]

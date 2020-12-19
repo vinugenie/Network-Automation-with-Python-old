@@ -1,0 +1,48 @@
+2020-12-18 21:41:47,461 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_facts']} on 2 hosts
+2020-12-18 21:41:47,498 - nornir.core.task -    ERROR -      start() - Host 'NX-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/root/automation/venv/lib/python3.8/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/root/automation/venv/lib/python3.8/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/root/automation/venv/lib/python3.8/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/automation/venv/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/root/automation/venv/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/root/automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/root/automation/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/root/automation/venv/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/root/automation/venv/lib/python3.8/site-packages/napalm/ios/ios.py", line 169, in open
+    self.device = self._netmiko_open(
+  File "/root/automation/venv/lib/python3.8/site-packages/napalm/base/base.py", line 86, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/root/automation/venv/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 312, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/root/automation/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/root/automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 346, in __init__
+    self._open()
+  File "/root/automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 351, in _open
+    self.establish_connection()
+  File "/root/automation/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 920, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/automation/venv/lib/python3.8/site-packages/paramiko/client.py", line 406, in connect
+    t.start_client(timeout=timeout)
+  File "/root/automation/venv/lib/python3.8/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/root/automation/venv/lib/python3.8/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/root/automation/venv/lib/python3.8/site-packages/paramiko/transport.py", line 2215, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+

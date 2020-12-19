@@ -1,0 +1,14 @@
+{
+    "xe-2": {
+        "IP": "192.168.122.2",
+        "type": "ios",
+        "user": "cisco",
+        "password": "cisco"
+    },
+    "nx-3": {
+        "IP": "192.168.122.3",
+        "type": "nxos",
+        "user": "admin",
+        "password": "Admin@123"
+    }
+}
