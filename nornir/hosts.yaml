@@ -15,4 +15,4 @@ NX-2:
     password: cisco
     platform: ios
     groups:
-        - nx-routers  
+        - nx-routers

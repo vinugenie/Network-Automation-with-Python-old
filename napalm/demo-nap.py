@@ -37,4 +37,3 @@ with driver(device_info['IP'], device_info['user'], device_info['password']) as 
     else:
         print("Configuration already present on the device")
         device.discard_config()
-

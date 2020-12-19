@@ -15,7 +15,6 @@ def chkconn(ip):
         print("Hostname for IP %s is : %s" % (ip, hostname))
         device.disconnect()
     
-
 for n in range(2, 4):
     ip = "192.168.122.{0}".format(n)
     t = Thread(target=chkconn, args = (ip,))
